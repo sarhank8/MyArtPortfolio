@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name/Studio Name | Art Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header>
+        <h1>YOUR NAME</h1>
+        <p>Painter, Sculptor, Creator</p>
+    </header>
+
+    <main>
+        <h2>The Collection</h2>
+        <section id="art-gallery">
+            <div class="art-card" data-title="Title of Art 1" data-price="Price 1">
+                <img src="images/art1.jpg" alt="Title of Art 1">
+                <h3>Title of Art 1</h3>
+                <p>Price: $450 USD</p>
+                <button onclick="openPurchaseModal('Title of Art 1', '$450 USD')">Inquire/Buy</button>
+            </div>
+
+            <div class="art-card" data-title="Title of Art 2" data-price="Price 2">
+                <img src="images/art2.jpg" alt="Title of Art 2">
+                <h3>Title of Art 2</h3>
+                <p>Price: $600 USD</p>
+                <button onclick="openPurchaseModal('Title of Art 2', '$600 USD')">Inquire/Buy</button>
+            </div>
+            
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 YOUR NAME. All Rights Reserved.</p>
+        <p>Follow on: <a href="#">Instagram</a> | <a href="#">Behance</a></p>
+    </footer>
+
+    <div id="purchase-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePurchaseModal()">&times;</span>
+            <h3>Inquiry for: <span id="art-title-placeholder"></span></h3>
+            <p id="art-price-placeholder"></p>
+
+            <form id="purchase-form" action="YOUR_FORM_SERVICE_ENDPOINT" method="POST">
+                
+                <input type="hidden" name="_subject" value="New Art Purchase Inquiry">
+                <input type="hidden" name="Artwork Title" id="hidden-art-title">
+                <input type="hidden" name="Artwork Price" id="hidden-art-price">
+                
+                <input type="hidden" name="_replyto" value="sarhank1026@gmail.com"> 
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="Name" required>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="Mobile Number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" required>
+
+                <label for="address">Shipping Address:</label>
+                <textarea id="address" name="Shipping Address" rows="3" required></textarea>
+
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
